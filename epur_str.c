@@ -13,7 +13,7 @@ void tab_replacer(char *str)
             printf(" ");
             str++;
         }
-        else if ((*(str + 1) == '\0') || *str == ' ')
+        else if ((*(str + 1) == '\0') && *str == ' ')
             str++;
         else if (*str >= 32 && *str <= 126)
             printf("%c", *str++);
