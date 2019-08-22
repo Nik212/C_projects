@@ -64,12 +64,15 @@ struct Node *sort(struct Node *lst)
     struct Node *start;
 
     start = lst;
-    lst = lst->next;
     while (lst)
     {
-        if (!(asccending(last->data, lst->data)))
-            ft_swap(&lst->data, &last->data);
-        last = lst;
+        last = lst->next;
+        while (last)
+        {
+            if (!(asccending(lst->data, last->data)))
+                ft_swap(&lst->data, &last->data);
+            last = last->next;
+        }
         lst = lst->next;
         // [] ---> [5, 0] --> [3, 1] --> [7, 2] // lst = [] '' if lst->data = 1 >= 1->data = 2 then lst->data
     }
