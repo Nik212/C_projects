@@ -28,26 +28,50 @@ void create(int A[], int n)
         last = t;
     }
 }
-void search_elem(struct Node *p, int a)
-{   
-    while (p)
+
+void recursive_display(struct Node *p)
+{
+    if (p)
     {
-        if (a == p->data)
+        printf("%d", p->data);
+        recursive_display(p->next);
+    }
+}
+
+struct Node *recursive_search(struct Node *p, int key)
+{
+    if (p == 0)
+        return (0);
+    if (key == p->data)
+        return (p);
+    recursive_search(p->next, key);
+}
+
+struct Node *improved_linsearch(struct Node *p, int key)
+{
+    struct Node *q = 0;
+
+    while (p != 0)
+    {
+        if (key == p->data)
         {
-            printf("found! The address is %p\n", p->next);
-            return ;
+            q->next = p->next;
+            p->next = first;
+            first = p;
         }
+        q = p;
         p = p->next;
     }
-    printf("Not found :(\n");
-    return ;
-    
 }
 int main()
 {
     int A[] = {3, 5, 7, 10, 15};
-
+    struct Node *p;
     create(A, 5);
-    search_elem(first, 228);
+    recursive_display(first);
+    printf("\n");
+    improved_linsearch(first, 7);
+    recursive_display(first);
+    printf("\n");
     return (0);
 }
