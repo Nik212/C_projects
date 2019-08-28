@@ -47,12 +47,14 @@ struct Node *recursive_search(struct Node *p, int key)
     recursive_search(p->next, key);
 }
 
-struct Node *improved_linsearch(struct Node *p, int key)
+void improved_linsearch(struct Node *p, int key)
 {
     struct Node *q = 0;
 
     while (p != 0)
     {
+        if (key == first->data)
+            return ;
         if (key == p->data)
         {
             q->next = p->next;
@@ -63,14 +65,15 @@ struct Node *improved_linsearch(struct Node *p, int key)
         p = p->next;
     }
 }
-int main()
+int main(int argc, char *argv[])
 {
+    int num = atoi(argv[1]);
     int A[] = {3, 5, 7, 10, 15};
     struct Node *p;
     create(A, 5);
     recursive_display(first);
     printf("\n");
-    improved_linsearch(first, 7);
+    improved_linsearch(first, num);
     recursive_display(first);
     printf("\n");
     return (0);
