@@ -57,14 +57,58 @@ void append(struct Node *p, int a)
     return ;
     
 }
+
+void add_first(struct Node *p, int a)
+{
+    struct Node *t;
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = a;
+    t->next = p;
+    first = t;
+}
+
+void add(struct Node *p, int a, int index)
+{
+    int len = 0;
+    int i = 0;
+    struct Node *q;
+    struct Node *t;
+    q = p;
+
+    while (q)
+        {
+            q = q->next;
+            len++;
+        }
+    if (len == 0)
+    {
+        create_one(p, a);
+        return ;
+    }
+    while (i <= len-1)
+    {
+        if (i == index)
+        {
+            t = (struct Node *)malloc(sizeof(struct Node));
+            t->data = a;
+            t->next = p->next;
+            p->next = t;
+            return ;
+        }
+        i++;
+        p = p->next;
+    }
+}
+
 int main()
 {
-    int A[] = {3, 5, 7, 10, 15};
+    int A[] = {3,4,5};
 
-    create(A, 5);
+    create(A, 3);
     display(first);
     printf("\n");
-    append(first, 228);
+    //append(first, 228);
+    add(first, 878, 2);
     display(first);
     return (0);
 }
