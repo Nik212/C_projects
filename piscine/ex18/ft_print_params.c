@@ -6,16 +6,11 @@
 /*   By: slupe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 17:10:16 by slupe             #+#    #+#             */
-/*   Updated: 2019/09/04 17:13:01 by slupe            ###   ########.fr       */
+/*   Updated: 2019/09/06 18:50:57 by slupe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 int		main(int argc, char *argv[])
 {

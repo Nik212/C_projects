@@ -6,16 +6,16 @@
 /*   By: slupe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 11:48:31 by slupe             #+#    #+#             */
-/*   Updated: 2019/09/04 12:00:42 by slupe            ###   ########.fr       */
+/*   Updated: 2019/09/06 18:45:22 by slupe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_recursive_factorial(int nb)
 {
-	if (nb < 0)
+	if (nb < 0 || nb > 12)
 		return (0);
 	if (nb == 0 || nb == 1)
 		return (1);
 	else
-		return (nb * (nb - 1));
+		return (nb * ft_recursive_factorial(nb - 1));
 }

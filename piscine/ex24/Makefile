@@ -6,7 +6,7 @@
 #    By: slupe <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 16:04:29 by slupe             #+#    #+#              #
-#    Updated: 2019/09/04 17:40:04 by slupe            ###   ########.fr        #
+#    Updated: 2019/09/06 17:09:49 by slupe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ $(NAME):
 clean:
 	rm -rf $(OBJ)
 
-fclean:
-	clean
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all

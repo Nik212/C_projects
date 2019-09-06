@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: slupe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 12:01:20 by slupe             #+#    #+#             */
-/*   Updated: 2019/09/04 12:31:51 by slupe            ###   ########.fr       */
+/*   Created: 2019/09/06 18:25:27 by slupe             #+#    #+#             */
+/*   Updated: 2019/09/06 18:28:43 by slupe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
+int		ft_sqrt(int nb)
 {
 	int m;
 
 	m = 0;
-	while ((m != nb) && (m * m != nb))
+	if (nb < 0)
+		return (0);
+	while (m * m < nb)
 		m++;
 	if (m * m == nb)
 		return (m);

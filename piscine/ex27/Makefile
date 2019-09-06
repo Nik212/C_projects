@@ -6,7 +6,7 @@
 #    By: slupe <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 18:01:14 by slupe             #+#    #+#              #
-#    Updated: 2019/09/04 18:28:05 by slupe            ###   ########.fr        #
+#    Updated: 2019/09/06 17:16:05 by slupe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,16 +25,14 @@ OBJ = display_file.o
 all: $(NAME)
 
 $(NAME):
-	    $(CC) $(FLAGS)  $(SRC) -o $(NAME)
+	$(CC) $(FLAGS)  $(SRC) -o $(NAME)
 
 clean:
-	    rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
-fclean:
-	    clean
-		    rm -rf $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
